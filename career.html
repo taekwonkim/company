@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Capriola|Nanum+Gothic:400,700|Noto+Sans+KR:400,500&display=swap&subset=korean" rel="stylesheet">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper-bundle.css">
+    <script src="http://about.hellonature.net/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery.touchSwipe.js"></script>
+    <script type="text/javascript" src="js/swiper-bundle.js"></script>
+    <script type="text/javascript" src="scroll/assets/js/lib/greensock/TweenMax.min.js"></script>
+    <script type="text/javascript" src="scroll/scrollmagic/uncompressed/ScrollMagic.js"></script>
+    <script type="text/javascript" src="scroll/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+    <script type="text/javascript" src="scroll/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+    <title>헬로네이처 | career</title>
+    <script>
+        $(function() {
+            var controller = new ScrollMagic.Controller();
+            function pathPrepare ($el) {
+                var lineLength = $el[0].getTotalLength();
+                $el.css("stroke-dasharray", lineLength);
+                $el.css("stroke-dashoffset", lineLength);
+            }
+            var $line01 = $("path#line01");
+            pathPrepare($line01);
+            var tween = new TimelineMax()
+                .add(TweenMax.to($line01, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
+                .add(TweenMax.to("path", 1, {stroke: "#FFEA81", ease:Linear.easeNone}), 0);
+            var scene = new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 100, tweenChanges: true})
+                            .setTween(tween)
+                            .addTo(controller);
+            var $line02 = $("path#line02");
+            pathPrepare($line02);
+            var tween = new TimelineMax()
+                .add(TweenMax.to($line02, 0.9, {strokeDashoffset: 0, ease:Linear.easeNone}))
+                .add(TweenMax.to("path", 1, {stroke: "#FFEA81", ease:Linear.easeNone}), 0);
+            var scene = new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 100, tweenChanges: true})
+                            .setTween(tween)
+                            .addTo(controller);
+            var $line03 = $("path#line03");
+            pathPrepare($line03);
+            var tween = new TimelineMax()
+                .add(TweenMax.to($line03, 0.4, {strokeDashoffset: 0, ease:Linear.easeNone, delay:1}))
+                .add(TweenMax.to("path", 0.4, {stroke: "#FFEA81", ease:Linear.easeNone}), 0);
+            var scene = new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 100, tweenChanges: true})
+                            .setTween(tween)
+                            .addTo(controller);
+            $(".btnToggleNext").on('click', function(){
+                $(".contentsToggle").removeClass("show");
+                $(this).parent().parent().css("height","auto").siblings().css("height","62px");
+                if ( $(this).hasClass("open") ) {
+                    $(".btnToggleNext").removeClass("open");
+                } else {
+                    $(".btnToggleNext").removeClass("open");
+                    $(this).addClass("open").parent().parent().find(".contentsToggle").addClass("show");
+                }
+            });
+            function slidenormalMode() {
+                var swiper = new Swiper('.slidenormal', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 20,
+                    centeredSlides: true,
+                    loop: true,
+                    loopFillGroupWithBlank: true,
+                    pagination: {
+                        el: '.swiper-pagination'
+                    }
+                });
+            }
+            slidenormalMode();
+        });
+    </script>
+</head>
+<body>
+<div class="wrap_hellonature career">
+    <header>
+        <div class="responseInner">
+            <h1><a href="https://www.hellonature.co.kr">헬로네이처</a></h1>
+            <nav class="f_capriola">
+                <a href="index.html" class="off">company</a>
+                <a href="career.html" class="on">career</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="section_01">
+            <div class="responseInner">
+                <div id="trigger1"></div>
+                <div class="line01">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="119" height="117" viewBox="0 0 119 117">
+                        <path id="line01" fill="none" fill-rule="evenodd" stroke="#FFEA81" stroke-linecap="round" stroke-width="5" d="M99.792 114s32.819-29.927 5.056-57.59c-27.764-27.664-55.673.29-57.521 2.05-1.848 1.758-11.992 12.271-3.224 21.02 8.768 8.75 19.237-2.005 21.815-4.772 2.578-2.767 25.713-32.083-1.83-60.357C36.542-13.924 3 19.53 3 19.53"/>
+                    </svg>
+                </div>
+                
+                <div class="sectionInner">
+                    <h2>헬로네이처의 <br> 사람과 문화</h2>
+                </div>
+                <img src="img/img_career01.jpg" alt="">
+            </div>
+        </div>
+        <div class="section_02">
+            <div class="responseInner">
+                <div class="sectionInner">
+                    <div class="line02">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="127" height="132" viewBox="0 0 127 132">
+                            <path id="line02" fill="none" fill-rule="evenodd" stroke="#FFEA81" stroke-linecap="round" stroke-width="5" d="M124 3S9 4.492 3 129"/>
+                        </svg>
+                    </div>
+                    <div class="line03">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="30" viewBox="0 0 28 30">
+                            <path id="line03" fill="none" fill-rule="evenodd" stroke="#FFEA81" stroke-linecap="round" stroke-width="5" d="M25 3.04c-.558 2.696-1.79 14.483-4.827 20.312-1.376 2.643-2.747 3.534-3.989 3.647-.991.025-1.957-.31-2.713-.94C9.238 22.965 3.648 5.109 3 3"/>
+                        </svg>
+                    </div>
+                    <h2>우리는 <br> 탐험합니다</h2>
+                    <p>제철로, 산지로<br> 새로운 맛과 우리만의 서비스로</p>
+                    <p>감자 한 알을 위해<br> 해발 700m까지 찾아갑니다.<br> 할머니 해녀의 철학을 들어봅니다.<br> 이태리 치즈 장인의 손맛을 발굴하고,<br> 최고로 가뿐한 배송을 실현하기까지<br> 수백, 수천 번을 실험합니다.</p>
+                    <p>헬로네이처 탐험가라면<br> 이 정도 수고는 당연한 것<br> 이만큼의 용기는 기본인 것</p>
+                    <p>맛과 취향이라는 보물을 발견하면<br> 누구보다 기쁜 우리니까<br> 우리가 찾아낸 맛과 서비스로<br> 모두의 삶도 풍요로워질테니까</p>
+                    <p>탐험은<br> 우리를 존재하게 한다<br> 우리를 움직이게 한다<br> 우리를 기운나게 한다</p>
+                    <p>오늘이 맛있는 탐험 헬로네이처</p>
+                </div>
+            </div>
+        </div>
+        <div class="section_03">
+            <div class="responseInner">
+                <div class="sectionInner">
+                    <h2>탐험하는 사람들</h2>
+                </div>
+            </div>
+            <div class="slidenormal">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div class="slideInner">
+                            <div class="section_slideTop">
+                                <img src="img/img_career03_01.png" alt="">
+                            </div>
+                            <div class="section_slideBottom">
+                                <h5>좋은 상품을 찾아 탐험하는 <br> 과정 자체가 제겐 소중합니다</h5>
+                                <p>생산자의 수고로움을 경청하고 공감합니다. 눈 뜨자마자 기상예보를 체크하고 날씨가 좋지 않을 땐 생산자만큼 고민이 깊어집니다. 반대로 좋을 결실을 맺었을 때 함께 기뻐할 생산자가 있어 더 의미있지요. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slideInner">
+                            <div class="section_slideTop">
+                                <img src="img/img_career03_02.png" alt="">
+                            </div>
+                            <div class="section_slideBottom">
+                                <h5>주문 폭주에도 끄떡 없이!<br> 튼튼한 물류를 만듭니다</h5>
+                                <p>물류센터는 주문이 폭주할 때 가장 힘들고 또 가장 기쁜데요. 배송 문제없이 빠르고 정확하게 가이드를 전하려 노력합니다. 실패의 경험도 소중하게 생각하고 원인을 파악해서 개선하려는 조직 문화가 큰 도움이 되었어요. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slideInner">
+                            <div class="section_slideTop">
+                                <img src="img/img_career03_03.png" alt="">
+                            </div>
+                            <div class="section_slideBottom">
+                                <h5>협업이 많은 팀, 명확하고<br> 유연한 소통이 가장 중요합니다</h5>
+                                <p>서비스를 구현하는 데 필요한 IT개발 사항을 기획하고 설계합니다. 다양한 사람들의 더 다양한 의견이 모여 정글처럼 복잡한 일이죠. 하지만 다양한 팀과 소통하며 매일 정글을 탐험하는 즐거움이 더 큽니다. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slideInner">
+                            <div class="section_slideTop">
+                                <img src="img/img_career03_04.png" alt="">
+                            </div>
+                            <div class="section_slideBottom">
+                                <h5>고객이 헬로네이처에서 경험하는 <br> 모든 활동을 설계합니다</h5>
+                                <p>상품과 콘텐츠를 즐거운 환경에서 소비할 수 있도록 쉽고 편리한 화면을 구성합니다. 새로운 아이디어가 생각날 때마다 제안하고 편하게 소통하면서 더 나은 방향으로 발전해가는 과정이 즐겁습니다. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slideInner">
+                            <div class="section_slideTop">
+                                <img src="img/img_career03_05.png" alt="">
+                            </div>
+                            <div class="section_slideBottom">
+                                <h5>상품의 숨은 의미를 발견해 <br> 표현하는 재미가 있어요</h5>
+                                <p>헬로네이처에서 가장 재밌는 일을 하고 있다고 생각해요. 옳은 생각과 상품에 담긴 이야기를 글과 사진, 영상으로 생생하게 표현할 수 있으니까요. '어떻게 저런 생각을 하지?' 동료들의 기발한 생각에 매일 감탄합니다. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slideInner">
+                            <div class="section_slideTop">
+                                <img src="img/img_career03_06.png" alt="">
+                            </div>
+                            <div class="section_slideBottom">
+                                <h5>브랜드 가치와 스토리를 <br> 통일된 이미지로 전합니다</h5>
+                                <p>단순히 시각적으로 보여지는 디자인이 아니라 상품 판매 향상이나 서비스 만족, 브랜드 이미지 구축에 도움을 주는 디자인을 고민합니다. 고객은 물론 동료들 간의 직접적인 피드백이 큰 도움이 됩니다. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slideInner">
+                            <div class="section_slideTop">
+                                <img src="img/img_career03_07.png" alt="">
+                            </div>
+                            <div class="section_slideBottom">
+                                <h5>고객과 구성원, 헬로네이처에 대한 <br> 다양한 생각을 듣습니다</h5>
+                                <p>여러 채널을 통해 상품, 서비스, 혜택을 알리고 우리가 하고 싶은 메시지를 효과적으로 전달할 수 있는 방법을 탐구합니다. 최전방에서 고객과 소통하고 다른 부서와 자주 협업하다 보니 다양한 사람의 다양한 생각을 들을 수 있어요. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="slideInner">
+                            <div class="section_slideTop">
+                                <img src="img/img_career03_08.png" alt="">
+                            </div>
+                            <div class="section_slideBottom">
+                                <h5>기대해주세요!<br> 헬로네이처만의 즐거운 서비스</h5>
+                                <p>구성원의 탐험에 날개를, 고객의 탐험에 즐거움을! 헬로네이처만의 새로운 사업 모델을 기획하고 그것을 펼쳐나갈 전략을 수립합니다.  넓은 시야로 경영 환경을 탐구하고 날카로운 시각으로 성과를 분석하는 자세는 필수죠. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="section_04">
+            <div class="responseInner">
+                <div class="sectionInner">
+                    <h2>즐거운 탐험 환경</h2>
+                    <div class="dFlex">
+                        <dl class="section_04_01">
+                            <dt><button class="btnToggleNext">헬로디너</button></dt>
+                            <dd class="contentsToggle">한 달에 한 번, 누구의 허락이나 <br> 어떤 조건도 없이<br> 오후 4시 퇴근합니다.</dd>
+                        </dl>
+                        <dl class="section_04_02">
+                            <dt><button class="btnToggleNext">헬로데이</button></dt>
+                            <dd class="contentsToggle">팀원 모두가 자유롭게 정한 날,<br> 자유로운 방식으로<br> 리프레시를 지원합니다.</dd>
+                        </dl>
+                        <dl class="section_04_03">
+                            <dt><button class="btnToggleNext">헬로리프레시</button></dt>
+                            <dd class="contentsToggle">매 3년 근속 시마다<br> 최대 한 달의 리프레시 휴가와<br> 휴가비를 지원합니다.</dd>
+                        </dl>
+                        <dl class="section_04_04">
+                            <dt><button class="btnToggleNext">직원할인</button></dt>
+                            <dd class="contentsToggle">헬로네이처 사이트 내 상품에 대해<br> 직원 할인 혜택을 제공합니다. </dd>
+                        </dl>
+                        <dl class="section_04_05">
+                            <dt><button class="btnToggleNext">교육비 지원</button></dt>
+                            <dd class="contentsToggle">탐험력 향상에 필요한<br> 교육이나 도서는 누구나 언제든지<br> 신청가능합니다.</dd>
+                        </dl>
+                        <dl class="section_04_06">
+                            <dt><button class="btnToggleNext">동호회 지원</button></dt>
+                            <dd class="contentsToggle">다양한 동회회 활동을 지원합니다.<br> 새로운 동호회 개설도 환영합니다.</dd>
+                        </dl>
+                        <dl class="section_04_07">
+                            <dt><button class="btnToggleNext">건강검진</button></dt>
+                            <dd class="contentsToggle">탐험하려면 체력이 기본!<br> 연 1회 건강검진을 통해<br> 건강관리를 지원합니다.</dd>
+                        </dl>
+                        <dl class="section_04_08">
+                            <dt><button class="btnToggleNext">경조사 지원</button></dt>
+                            <dd class="contentsToggle">경조금과 휴가, 화환, 선물 등으로<br> 기쁜일과 슬픈일을 함께 나눕니다.</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="section_05">
+            <div class="responseInner">
+                <img src="img/img_career05.jpg" alt="">
+            </div>
+        </div>
+        <div class="section_06">
+            <div class="responseInner">
+                <div class="sectionInner">
+                    <h2>자, 함께 탐험합시다</h2>
+                    <div class="dFlex">
+                        <dl>
+                            <dt>채용일정</dt>
+                            <dd>전 직군 상시 채용</dd>
+                        </dl>
+                        <dl>
+                            <dt>전형절차</dt>
+                            <dd>서류전형 > 1차면접 > 2차면접 > 합격</dd>
+                        </dl>
+                        <dl>
+                            <dt>제출서류</dt>
+                            <dd>자유 양식 이력서와 경력소개서, 기타 지원 서류</dd>
+                        </dl>
+                        <dl>
+                            <dt>지원방법</dt>
+                            <dd>이메일 지원 recruit@hellonature.co.kr</dd>
+                        </dl>
+                        <dl>
+                            <dt>주의사항</dt>
+                            <dd>*입사지원 서류에 허위사실이 발견될 경우 <br> 채용 확정 이후라도 채용을 취소할 수 있습니다.</dd>
+                        </dl>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

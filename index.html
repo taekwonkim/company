@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Capriola|Nanum+Gothic:400,700|Noto+Sans+KR:400,500&display=swap&subset=korean" rel="stylesheet">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/swiper-bundle.css">
+    <script src="http://about.hellonature.net/js/jquery-3.4.1.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="js/jquery.touchSwipe.js"></script>
+    <script type="text/javascript" src="js/swiper-bundle.js"></script>
+    <script type="text/javascript" src="scroll/assets/js/lib/greensock/TweenMax.min.js"></script>
+    <script type="text/javascript" src="scroll/scrollmagic/uncompressed/ScrollMagic.js"></script>
+    <script type="text/javascript" src="scroll/scrollmagic/uncompressed/plugins/animation.gsap.js"></script>
+    <script type="text/javascript" src="scroll/scrollmagic/uncompressed/plugins/debug.addIndicators.js"></script>
+    <title>헬로네이처 | company</title>
+    <script>
+        $(function () {
+            var controller = new ScrollMagic.Controller();
+            var revealElements = document.getElementsByClassName("digit");
+            for (var i=0; i<revealElements.length; i++) {
+                new ScrollMagic.Scene({
+                    triggerElement: revealElements[i], 
+                    offset: 50,
+                    triggerHook: 0.9,
+                })
+                .setClassToggle(revealElements[i], "visible")
+                .addTo(controller);
+            }
+            function pathPrepare ($el) {
+                var lineLength = $el[0].getTotalLength();
+                $el.css("stroke-dasharray", lineLength/2);
+                $el.css("stroke-dashoffset", lineLength);
+            }
+            var $hn_line01 = $("path.hn_line01");
+            pathPrepare($hn_line01);
+            var tween = new TimelineMax()
+                .add(TweenMax.to($hn_line01, 4, {strokeDashoffset: 1460, repeat: -1, ease:Linear.easeNone}))
+            var scene = new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 10, tweenChanges: true})
+                .setTween(tween)
+                .addTo(controller);
+            function pathPrepare02 ($el) {
+                var lineLength = $el[0].getTotalLength();
+                $el.css("stroke-dasharray", lineLength/2);
+                $el.css("stroke-dashoffset", lineLength);
+            }
+            var $hn_line02 = $("path.hn_line02");
+            pathPrepare02($hn_line02);
+            var tween = new TimelineMax()
+                .add(TweenMax.to($hn_line02, 4, {strokeDashoffset: 4164, repeat: -1, ease:Linear.easeNone}))
+            var scene = new ScrollMagic.Scene({triggerElement: "#trigger1", duration: 10, tweenChanges: true})
+                .setTween(tween)
+                .addTo(controller);
+            function random_image() {
+                var imgArray = new Array();
+                imgArray[0] = "img/img_hellonature01_01.jpg";
+                imgArray[1] = "img/img_hellonature01_02.jpg";
+                imgArray[2] = "img/img_hellonature01_03.jpg";
+                imgArray[3] = "img/img_hellonature01_04.jpg";
+                var ry = Math.floor( Math.random() * (imgArray.length) );
+                $("#introImg").html('<img src=' + imgArray[ry]+'>');
+            }
+            random_image();
+            $.fn.alterClass = function (cls, opt) {
+                opt = opt || {};
+                var conf = $.extend({}, {
+                    "min": 1,
+                    "max": 5,
+                    "step": 1
+                }, opt);
+                return this.each(function () {
+                    var oldClass = $.grep(this.className.split(" "), function (v, i) {
+                        return v.indexOf(cls) === 0;
+                    }).join(),
+                        oldNum = Number(oldClass.split('-')[1]),
+                        newClass;
+                    oldNum += conf.step;
+                    if (conf.step > 0) {
+                        newClass = cls + (oldNum <= conf.max ? oldNum : conf.max);
+                    } else {
+                        newClass = cls + (oldNum >= conf.min ? oldNum : conf.min);
+                    }
+                    
+                    if (! $(this).hasClass(newClass)) {
+                        $(this).removeClass(oldClass).addClass(newClass);
+                    }
+                });
+            };
+            function textFade() {
+                $(".swipeIn h2").hide();
+                $(".swipeIn p").hide();
+                $(".hellonatureShape-1 h2").delay(1200).fadeIn(600).html("헬로네이처는<br>탐험합니다");
+                $(".hellonatureShape-2 h2").delay(1200).fadeIn(600).html("탐구");
+                $(".hellonatureShape-3 h2").delay(600).fadeIn(600).html("최상");
+                $(".hellonatureShape-4 h2").delay(600).fadeIn(600).html("스토리");
+                $(".hellonatureShape-5 h2").delay(600).fadeIn(600).html("옳은");
+                $(".hellonatureShape-1 p").delay(600).fadeIn(600).html("");
+                $(".hellonatureShape-2 p").delay(1200).fadeIn(600).html("늘 더 새롭고 더 나은 것을<br> 찾기 위해 노력합니다");
+                $(".hellonatureShape-3 p").delay(600).fadeIn(600).html("최고 품질의 상품과<br> 더 높은 수준의 서비스를<br> 제공합니다");
+                $(".hellonatureShape-4 p").delay(600).fadeIn(600).html("산지, 사람, 문화,<br> 우리만의 스토리를 발굴해<br> 함께 전합니다");
+                $(".hellonatureShape-5 p").delay(600).fadeIn(600).html("사회 구성원과 환경에<br> 어떤 해도 끼치지 않는<br> 선택을 합니다");
+            }
+            shape02 = document.getElementById("shape02");
+            shape02_1 = document.getElementById("shape02_1");
+            shape03 = document.getElementById("shape03");
+            shape04 = document.getElementById("shape04");
+            shape05 = document.getElementById("shape05");
+            shape01Pre = document.getElementById("shape01Pre");
+            shape02Pre = document.getElementById("shape02Pre");
+            shape03Pre = document.getElementById("shape03Pre");
+            shape04Pre = document.getElementById("shape04Pre");
+            shape05Pre = document.getElementById("shape05Pre");
+            $(".swipeIn").swipe( { fingers:"all", swipeLeft:swipe1, swipeRight:swipe2, allowPageScroll:"vertical", maxTimeThreshold:5000, threshold:0, excludedElements:".btn_start"} );
+            function swipe1(event, direction, distance, duration, fingerCount) {
+                if ( $(this).hasClass("hellonatureShape-5") ) {
+                    console.log("lastSlide");
+                } else {
+                    $(this).removeClass("prev").addClass("active");
+                    $(this).alterClass('hellonatureShape-', {'step': 1});
+                    $(".section_03").removeClass("prev").addClass("active");
+                    if ( $(this).hasClass("hellonatureShape-2") ) {
+                        setTimeout(function(){ shape02.beginElement(); }, 900);
+                    } else if ( $(this).hasClass("hellonatureShape-3") ) {
+                        shape03.beginElement();
+                    } else if ( $(this).hasClass("hellonatureShape-4") ) {
+                        shape04.beginElement();
+                    } else if ( $(this).hasClass("hellonatureShape-5") ) {
+                        shape05.beginElement();
+                    }
+                    textFade();
+                }
+            }
+            function swipe2(event, direction, distance, duration, fingerCount) {
+                if ( $(this).hasClass("hellonatureShape-1") ) {
+                    console.log("firstSlide");
+                    shape01Pre.beginElement();
+                    $(this).removeClass("prev");
+                } else {
+                    $(this).removeClass("active").addClass("prev");
+                    $(this).alterClass('hellonatureShape-', {'step': -1});
+                    if ( $(this).hasClass("hellonatureShape-2") ) {
+                        shape02Pre.beginElement();
+                    } else if ( $(this).hasClass("hellonatureShape-1") ) {
+                        shape01Pre.beginElement();
+                        $(".section_03").removeClass("active").addClass("prev");
+                        setTimeout(function(){ $(".hellonatureShape-1").removeClass("prev"); }, 1500);
+                    } else if ( $(this).hasClass("hellonatureShape-3") ) {
+                        shape03Pre.beginElement();
+                    } else if ( $(this).hasClass("hellonatureShape-4") ) {
+                        shape04Pre.beginElement();
+                    } else if ( $(this).hasClass("hellonatureShape-5") ) {
+                        shape05Pre.beginElement();
+                    }
+                    textFade();
+                }
+            }
+            function slidenormalMode() {
+                var swiper = new Swiper('.slidenormal', {
+                    slidesPerView: 'auto',
+                    spaceBetween: 20,
+                    centeredSlides: true,
+                    loop: true,
+                    loopFillGroupWithBlank: true,
+                    pagination: {
+                        el: '.swiper-pagination'
+                    }
+                });
+            }
+            slidenormalMode();
+        });
+    </script>
+</head>
+<body>
+<div class="wrap_hellonature company">
+    <header>
+        <div class="responseInner">
+            <h1><a href="https://www.hellonature.net/mobile_shop/#/welcome">헬로네이처</a></h1>
+            <nav class="f_capriola">
+                <a href="index.html" class="on">company</a>
+                <a href="career.html" class="off">career</a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="section_01">
+            <div id="trigger1"></div>
+            <div class="frame">
+                <svg class="mobOnly" xmlns="http://www.w3.org/2000/svg" width="375" height="188" viewBox="0 0 375 188">
+                <path class="hn_line01" d="M379 36.667s-1.609 67.267-48.89 65.775c-47.28-1.493-52.64-56.88-52.478-67.137C277.794 25.048 278.713 3 295.633 3s18.121 28.014 18.283 37.131C314.078 49.25 303.782 185 165.163 185 26.543 185-4 63.417-4 63.417"/>
+                </svg>
+                <svg class="webOnly" xmlns="http://www.w3.org/2000/svg" width="1208" height="407" viewBox="0 0 1208 407">
+                <path class="hn_line02" d="M1203.479 4.58s-45.035 265.48-216.428 265.48S821.325 85 821.325 85s0-63.19 44.82-63.19 41.71 68.72 41.71 68.72-6.325 283.59-407.932 310.29C98.316 427.52 4.521 4.58 4.521 4.58"/>
+                </svg>
+            </div>
+            <h2>오늘이 맛있는 탐험 <br> 헬로네이처</h2>
+            <div class="responseInner">
+                <div id="introImg"></div>
+            </div>
+        </div>
+        <div class="section_02">
+            <div class="responseInner">
+                <div class="sectionInner">
+                    <h2>탐험을<br> 시작합니다</h2>
+                    <p> 누구보다 신선하게<br> 당신의 아침에 닿도록<br> 새벽을 탐험하고</p>
+                    <p>누구보다 새로운 맛을 <br> 선보이기 위해<br> 직접 전국을 탐험하고 </p>
+                    <p>누군가는 유행만을 따를 때<br> 옳은 것을 좇아 당신의 삶에, 이 땅에<br> 더 건강한 방법을 탐험합니다</p>
+                    <p>당신의 임무는 오직 하나,<br> 탐험대가 가져온 새로운 맛을<br> 반갑게 맞이하는 것</p>
+                    <p>자, 탐험을 시작합니다<br> 당신의 오늘을 더 맛있게 <br> 삶을 더 즐겁고 풍요롭게<br> 헬로네이처는 오늘도 탐험합니다</p>
+                    <p>오늘이 맛있는 탐험<br> 헬로네이처</p>
+                </div>
+            </div>
+        </div>
+        <div class="section_03 prev">
+            <div id="swipeArea" class="swipeArea">
+                <section class="swipeIn hellonatureShape-1">
+                    <img class="btn_next" src="img/img_arrow_left.svg" alt="">
+                    <h2>헬로네이처는<br> 탐험합니다</h2>
+                    <p></p>
+                    <svg>
+                        <path class="shape01" d="M375,284c0-4.8,0-9,0-13c0-5,0-13,0-18c0,0,0.9-1.1-5.6,0.3c-4.6,1-8.8,3.1-12.3,6.3
+                            c-3.3,3-5.8,6.6-7.5,10.7c-2.3,5.4-3.1,11.2-2.4,17c0.5,4.1,1.8,8.1,3.8,11.8c2,3.7,4.8,6.9,8.2,9.4c4.7,3.6,9.9,5.8,15.8,5.6
+                            c0-3,0-5,0-9s0-7,0-11C375,289,375.1,289.6,375,284z">
+                        </path>
+                        <path class="shape01Pre" d="M316.9,137.5c-20.8-0.2-41.9,15.1-51.5,24.6c-3.8-7.8-16-24.6-34.6-24.6c-17.5,0-32.4,6.7-52.5,24.6
+                            c-1-1.3-10.3-23.6-35.6-24.6c-55.3-1.3-104.3,98.1-112.6,121.4c-46,130,1.6,169.8,19.6,172.4c23.1,2.2,38.6-4.2,59.8-23.4
+                            c2,3.7,15.2,24.6,35,24.5c18.2,0,33.9-8.2,52.1-24.6c6.8,12.1,18,24.6,37.6,24.5c36.7,0,87.8-51.4,115.5-134.8
+                            C384,184.7,349.3,137.8,316.9,137.5z">
+                        <animate id="shape01Pre" attributeType="XML" attributeName="d" dur="500ms" begin="indefinite" fill="freeze"
+                        from="M316.9,137.5c-20.8-0.2-41.9,15.1-51.5,24.6c-3.8-7.8-16-24.6-34.6-24.6c-17.5,0-32.4,6.7-52.5,24.6
+                            c-1-1.3-10.3-23.6-35.6-24.6c-55.3-1.3-104.3,98.1-112.6,121.4c-46,130,1.6,169.8,19.6,172.4c23.1,2.2,38.6-4.2,59.8-23.4
+                            c2,3.7,15.2,24.6,35,24.5c18.2,0,33.9-8.2,52.1-24.6c6.8,12.1,18,24.6,37.6,24.5c36.7,0,87.8-51.4,115.5-134.8
+                            C384,184.7,349.3,137.8,316.9,137.5z"
+                        to="M220.8,282.5c0-4.8-1.2-9.5-3.3-13.8c-2.4-5-6.3-9.3-11-12.3c-5.7-3.5-12.6-4.7-19.1-3.2
+                            c-4.6,1-8.8,3.1-12.3,6.3c-3.3,3-5.8,6.6-7.5,10.7c-2.3,5.4-3.1,11.2-2.4,17c0.5,4.1,1.8,8.1,3.8,11.8c2,3.7,4.8,6.9,8.2,9.4
+                            c4.7,3.6,10.4,5.4,16.3,5.3c5-0.2,9.9-1.7,14-4.6c3.9-2.7,7.1-6.2,9.3-10.4C219.5,293.8,220.9,288.2,220.8,282.5z"
+                        />
+                        </path>
+                        <path class="shape02Pre" d="M339.8,205.6c-4.4-12.9-12.3-36.1-38.2-57.9c-19.9-14.8-51.5-30-100.3-23c-17.4,3.4-41.4,10.5-62,34.7
+                            c-26.2-3.5-53,3.1-73,13.5c-33.9,17.6-50.7,48.3-53.1,82.9c-3,58.6,34.7,91.9,54.6,103.5c14,9,47.3,19.2,74.1,17.6
+                            c24.9,37.2,53.6,57.8,76.8,64.4c18.4,4.4,40.4,13.8,90.3-8.5c27-12.9,60.6-57.5,52-103.8c-2.7-12.1-3.7-26.6-22.9-55.5
+                            C347.3,254.3,348,232.9,339.8,205.6z">
+                        <animate id="shape02Pre" attributeType="XML" attributeName="d" dur="500ms" begin="indefinite" fill="freeze"
+                        from="M339.8,205.6c-4.4-12.9-12.3-36.1-38.2-57.9c-19.9-14.8-51.5-30-100.3-23c-17.4,3.4-41.4,10.5-62,34.7
+                            c-26.2-3.5-53,3.1-73,13.5c-33.9,17.6-50.7,48.3-53.1,82.9c-3,58.6,34.7,91.9,54.6,103.5c14,9,47.3,19.2,74.1,17.6
+                            c24.9,37.2,53.6,57.8,76.8,64.4c18.4,4.4,40.4,13.8,90.3-8.5c27-12.9,60.6-57.5,52-103.8c-2.7-12.1-3.7-26.6-22.9-55.5
+                            C347.3,254.3,348,232.9,339.8,205.6z"
+                        to="M316.9,137.5c-20.8-0.2-41.9,15.1-51.5,24.6c-3.8-7.8-16-24.6-34.6-24.6c-17.5,0-32.4,6.7-52.5,24.6
+                            c-1-1.3-10.3-23.6-35.6-24.6c-55.3-1.3-104.3,98.1-112.6,121.4c-46,130,1.6,169.8,19.6,172.4c23.1,2.2,38.6-4.2,59.8-23.4
+                            c2,3.7,15.2,24.6,35,24.5c18.2,0,33.9-8.2,52.1-24.6c6.8,12.1,18,24.6,37.6,24.5c36.7,0,87.8-51.4,115.5-134.8
+                            C384,184.7,349.3,137.8,316.9,137.5z"
+                        />
+                        </path>
+                        <path class="shape02_1" d="M375,284c0-4.8,0-9,0-13c0-5,0-13,0-18c0,0,0.9-1.1-5.6,0.3c-4.6,1-8.8,3.1-12.3,6.3
+                            c-3.3,3-5.8,6.6-7.5,10.7c-2.3,5.4-3.1,11.2-2.4,17c0.5,4.1,1.8,8.1,3.8,11.8c2,3.7,4.8,6.9,8.2,9.4c4.7,3.6,9.9,5.8,15.8,5.6
+                            c0-3,0-5,0-9s0-7,0-11C375,289,375.1,289.6,375,284z">
+                        </path>
+                        <path class="shape02" d="M220.8,282.5c0-4.8-1.2-9.5-3.3-13.8c-2.4-5-6.3-9.3-11-12.3c-5.7-3.5-12.6-4.7-19.1-3.2
+                            c-4.6,1-8.8,3.1-12.3,6.3c-3.3,3-5.8,6.6-7.5,10.7c-2.3,5.4-3.1,11.2-2.4,17c0.5,4.1,1.8,8.1,3.8,11.8c2,3.7,4.8,6.9,8.2,9.4
+                            c4.7,3.6,10.4,5.4,16.3,5.3c5-0.2,9.9-1.7,14-4.6c3.9-2.7,7.1-6.2,9.3-10.4C219.5,293.8,220.9,288.2,220.8,282.5z">
+                        <animate  id="shape02" attributeType="XML" attributeName="d" dur="500ms" begin="indefinite" fill="freeze"
+                        from="M220.8,282.5c0-4.8-1.2-9.5-3.3-13.8c-2.4-5-6.3-9.3-11-12.3c-5.7-3.5-12.6-4.7-19.1-3.2
+                            c-4.6,1-8.8,3.1-12.3,6.3c-3.3,3-5.8,6.6-7.5,10.7c-2.3,5.4-3.1,11.2-2.4,17c0.5,4.1,1.8,8.1,3.8,11.8c2,3.7,4.8,6.9,8.2,9.4
+                            c4.7,3.6,10.4,5.4,16.3,5.3c5-0.2,9.9-1.7,14-4.6c3.9-2.7,7.1-6.2,9.3-10.4C219.5,293.8,220.9,288.2,220.8,282.5z"
+                        to="M316.9,137.5c-20.8-0.2-41.9,15.1-51.5,24.6c-3.8-7.8-16-24.6-34.6-24.6c-17.5,0-32.4,6.7-52.5,24.6
+                            c-1-1.3-10.3-23.6-35.6-24.6c-55.3-1.3-104.3,98.1-112.6,121.4c-46,130,1.6,169.8,19.6,172.4c23.1,2.2,38.6-4.2,59.8-23.4
+                            c2,3.7,15.2,24.6,35,24.5c18.2,0,33.9-8.2,52.1-24.6c6.8,12.1,18,24.6,37.6,24.5c36.7,0,87.8-51.4,115.5-134.8
+                            C384,184.7,349.3,137.8,316.9,137.5z"
+                        />
+                        </path>
+                        <path class="shape03Pre" d="M339.8,205.6c-4.4-12.9-12.3-36.1-38.2-57.9c-19.9-14.8-51.5-30-100.3-23c-17.4,3.4-41.4,10.5-62,34.7
+                            c-26.2-3.5-53,3.1-73,13.5c-33.9,17.6-50.7,48.3-53.1,82.9c-3,58.6,34.7,91.9,54.6,103.5c14,9,47.3,19.2,74.1,17.6
+                            c24.9,37.2,53.6,57.8,76.8,64.4c18.4,4.4,40.4,13.8,90.3-8.5c27-12.9,60.6-57.5,52-103.8c-2.7-12.1-3.7-26.6-22.9-55.5
+                            C347.3,254.3,348,232.9,339.8,205.6z">
+                        <animate id="shape03Pre" attributeType="XML" attributeName="d" dur="500ms" begin="indefinite" fill="freeze"
+                        from="M291.7,144.2c-22.5-20.8-48.7-26.5-77.2-21.6c-46.2,8.7-68.3,40-74.7,48.9c-38.1-6.4-81.3,5.3-106.7,38.1
+                            c-22,29.4-20.1,53.4-18.4,68.3c3.2,20.1,8.9,37.1,49.8,61.3c-5.6,13.5-9.1,46.6,4.6,68.8c27.6,41,68.9,43.6,94.2,39.6
+                            c30.1-5.4,62.5-21.4,75.1-50.2c16.3,1.7,52.6,1.8,76.9-14.2c11.4-7.9,46.5-36.3,46.1-81.4c-1.3-35.5-18.9-62.4-48.6-71.2
+                            C319.7,196.7,316.3,166.3,291.7,144.2z"
+                        to="M339.8,205.6c-4.4-12.9-12.3-36.1-38.2-57.9c-19.9-14.8-51.5-30-100.3-23c-17.4,3.4-41.4,10.5-62,34.7
+                            c-26.2-3.5-53,3.1-73,13.5c-33.9,17.6-50.7,48.3-53.1,82.9c-3,58.6,34.7,91.9,54.6,103.5c14,9,47.3,19.2,74.1,17.6
+                            c24.9,37.2,53.6,57.8,76.8,64.4c18.4,4.4,40.4,13.8,90.3-8.5c27-12.9,60.6-57.5,52-103.8c-2.7-12.1-3.7-26.6-22.9-55.5
+                            C347.3,254.3,348,232.9,339.8,205.6z"
+                        />
+                        </path>
+                        <path class="shape03" d="M316.9,137.5c-20.8-0.2-41.9,15.1-51.5,24.6c-3.8-7.8-16-24.6-34.6-24.6c-17.5,0-32.4,6.7-52.5,24.6
+                            c-1-1.3-10.3-23.6-35.6-24.6c-55.3-1.3-104.3,98.1-112.6,121.4c-46,130,1.6,169.8,19.6,172.4c23.1,2.2,38.6-4.2,59.8-23.4
+                            c2,3.7,15.2,24.6,35,24.5c18.2,0,33.9-8.2,52.1-24.6c6.8,12.1,18,24.6,37.6,24.5c36.7,0,87.8-51.4,115.5-134.8
+                            C384,184.7,349.3,137.8,316.9,137.5z">
+                        <animate id="shape03" attributeType="XML" attributeName="d" dur="500ms" begin="indefinite" fill="freeze"
+                        from="M316.9,137.5c-20.8-0.2-41.9,15.1-51.5,24.6c-3.8-7.8-16-24.6-34.6-24.6c-17.5,0-32.4,6.7-52.5,24.6
+                            c-1-1.3-10.3-23.6-35.6-24.6c-55.3-1.3-104.3,98.1-112.6,121.4c-46,130,1.6,169.8,19.6,172.4c23.1,2.2,38.6-4.2,59.8-23.4
+                            c2,3.7,15.2,24.6,35,24.5c18.2,0,33.9-8.2,52.1-24.6c6.8,12.1,18,24.6,37.6,24.5c36.7,0,87.8-51.4,115.5-134.8
+                            C384,184.7,349.3,137.8,316.9,137.5z"
+                        to="M339.8,205.6c-4.4-12.9-12.3-36.1-38.2-57.9c-19.9-14.8-51.5-30-100.3-23c-17.4,3.4-41.4,10.5-62,34.7
+                            c-26.2-3.5-53,3.1-73,13.5c-33.9,17.6-50.7,48.3-53.1,82.9c-3,58.6,34.7,91.9,54.6,103.5c14,9,47.3,19.2,74.1,17.6
+                            c24.9,37.2,53.6,57.8,76.8,64.4c18.4,4.4,40.4,13.8,90.3-8.5c27-12.9,60.6-57.5,52-103.8c-2.7-12.1-3.7-26.6-22.9-55.5
+                            C347.3,254.3,348,232.9,339.8,205.6z"
+                        />
+                        </path>
+                        <path class="shape04Pre" d="M333.6,211.8c-13-24.9-34.9-46.1-59.1-60.2c-25.8-15.1-56.4-23.8-88.9-23.8c-41,0-58.3,10-78.4,19.3
+                            c-18.8,11.4-34.5,17.9-55.4,48.1c-23,33.7-29.2,55.5-29.2,89.5c0,36.6,15.9,73.2,31.4,93.4c9.2,10.8,17.6,25.2,51.4,43.4
+                            c23.6,11.6,44.3,20.2,81.3,20.2c38.6,0,67-10.1,91.5-24.9c22-14,36.7-28.2,55-58.1c10.6-18.9,20.5-45.9,20.5-73.9
+                            C353.6,253.1,342.6,229.3,333.6,211.8z">
+                        <animate id="shape04Pre" attributeType="XML" attributeName="d" dur="500ms" begin="indefinite" fill="freeze"
+                        from="M333.6,211.8c-13-24.9-34.9-46.1-59.1-60.2c-25.8-15.1-56.4-23.8-88.9-23.8c-41,0-58.3,10-78.4,19.3
+                            c-18.8,11.4-34.5,17.9-55.4,48.1c-23,33.7-29.2,55.5-29.2,89.5c0,36.6,15.9,73.2,31.4,93.4c9.2,10.8,17.6,25.2,51.4,43.4
+                            c23.6,11.6,44.3,20.2,81.3,20.2c38.6,0,67-10.1,91.5-24.9c22-14,36.7-28.2,55-58.1c10.6-18.9,20.5-45.9,20.5-73.9
+                            C353.6,253.1,342.6,229.3,333.6,211.8z"
+                        to="M291.7,144.2c-22.5-20.8-48.7-26.5-77.2-21.6c-46.2,8.7-68.3,40-74.7,48.9c-38.1-6.4-81.3,5.3-106.7,38.1
+                            c-22,29.4-20.1,53.4-18.4,68.3c3.2,20.1,8.9,37.1,49.8,61.3c-5.6,13.5-9.1,46.6,4.6,68.8c27.6,41,68.9,43.6,94.2,39.6
+                            c30.1-5.4,62.5-21.4,75.1-50.2c16.3,1.7,52.6,1.8,76.9-14.2c11.4-7.9,46.5-36.3,46.1-81.4c-1.3-35.5-18.9-62.4-48.6-71.2
+                            C319.7,196.7,316.3,166.3,291.7,144.2z"
+                        />
+                        </path>
+                        <path class="shape04" d="M339.8,205.6c-4.4-12.9-12.3-36.1-38.2-57.9c-19.9-14.8-51.5-30-100.3-23c-17.4,3.4-41.4,10.5-62,34.7
+                            c-26.2-3.5-53,3.1-73,13.5c-33.9,17.6-50.7,48.3-53.1,82.9c-3,58.6,34.7,91.9,54.6,103.5c14,9,47.3,19.2,74.1,17.6
+                            c24.9,37.2,53.6,57.8,76.8,64.4c18.4,4.4,40.4,13.8,90.3-8.5c27-12.9,60.6-57.5,52-103.8c-2.7-12.1-3.7-26.6-22.9-55.5
+                            C347.3,254.3,348,232.9,339.8,205.6z">
+                        <animate id="shape04" attributeType="XML" attributeName="d" dur="500ms" begin="indefinite" fill="freeze"
+                        from="M339.8,205.6c-4.4-12.9-12.3-36.1-38.2-57.9c-19.9-14.8-51.5-30-100.3-23c-17.4,3.4-41.4,10.5-62,34.7
+                            c-26.2-3.5-53,3.1-73,13.5c-33.9,17.6-50.7,48.3-53.1,82.9c-3,58.6,34.7,91.9,54.6,103.5c14,9,47.3,19.2,74.1,17.6
+                            c24.9,37.2,53.6,57.8,76.8,64.4c18.4,4.4,40.4,13.8,90.3-8.5c27-12.9,60.6-57.5,52-103.8c-2.7-12.1-3.7-26.6-22.9-55.5
+                            C347.3,254.3,348,232.9,339.8,205.6z"
+                        to="M291.7,144.2c-22.5-20.8-48.7-26.5-77.2-21.6c-46.2,8.7-68.3,40-74.7,48.9c-38.1-6.4-81.3,5.3-106.7,38.1
+                            c-22,29.4-20.1,53.4-18.4,68.3c3.2,20.1,8.9,37.1,49.8,61.3c-5.6,13.5-9.1,46.6,4.6,68.8c27.6,41,68.9,43.6,94.2,39.6
+                            c30.1-5.4,62.5-21.4,75.1-50.2c16.3,1.7,52.6,1.8,76.9-14.2c11.4-7.9,46.5-36.3,46.1-81.4c-1.3-35.5-18.9-62.4-48.6-71.2
+                            C319.7,196.7,316.3,166.3,291.7,144.2z"
+                        />
+                        </path>
+                        <path class="shape05" d="M291.7,144.2c-22.5-20.8-48.7-26.5-77.2-21.6c-46.2,8.7-68.3,40-74.7,48.9c-38.1-6.4-81.3,5.3-106.7,38.1
+                            c-22,29.4-20.1,53.4-18.4,68.3c3.2,20.1,8.9,37.1,49.8,61.3c-5.6,13.5-9.1,46.6,4.6,68.8c27.6,41,68.9,43.6,94.2,39.6
+                            c30.1-5.4,62.5-21.4,75.1-50.2c16.3,1.7,52.6,1.8,76.9-14.2c11.4-7.9,46.5-36.3,46.1-81.4c-1.3-35.5-18.9-62.4-48.6-71.2
+                            C319.7,196.7,316.3,166.3,291.7,144.2z">
+                        <animate id="shape05" attributeType="XML" attributeName="d" dur="500ms" begin="indefinite" fill="freeze"
+                        from="M291.7,144.2c-22.5-20.8-48.7-26.5-77.2-21.6c-46.2,8.7-68.3,40-74.7,48.9c-38.1-6.4-81.3,5.3-106.7,38.1
+                            c-22,29.4-20.1,53.4-18.4,68.3c3.2,20.1,8.9,37.1,49.8,61.3c-5.6,13.5-9.1,46.6,4.6,68.8c27.6,41,68.9,43.6,94.2,39.6
+                            c30.1-5.4,62.5-21.4,75.1-50.2c16.3,1.7,52.6,1.8,76.9-14.2c11.4-7.9,46.5-36.3,46.1-81.4c-1.3-35.5-18.9-62.4-48.6-71.2
+                            C319.7,196.7,316.3,166.3,291.7,144.2z"
+                        to="M333.6,211.8c-13-24.9-34.9-46.1-59.1-60.2c-25.8-15.1-56.4-23.8-88.9-23.8c-41,0-58.3,10-78.4,19.3
+                            c-18.8,11.4-34.5,17.9-55.4,48.1c-23,33.7-29.2,55.5-29.2,89.5c0,36.6,15.9,73.2,31.4,93.4c9.2,10.8,17.6,25.2,51.4,43.4
+                            c23.6,11.6,44.3,20.2,81.3,20.2c38.6,0,67-10.1,91.5-24.9c22-14,36.7-28.2,55-58.1c10.6-18.9,20.5-45.9,20.5-73.9
+                            C353.6,253.1,342.6,229.3,333.6,211.8z"
+                        />
+                        </path>
+                    </svg>
+                </section>
+            </div>
+        </div>
+        <div class="section_04">
+            <div class="responseInner">
+                <div class="sectionInner">
+                    <h2>맛과 취향을 탐험하는<br> 푸드 라이프샵</h2>
+                    <p>갓 수확한 제철 산물을 산지에서 바로, 떠오르는 맛집 메뉴를 누구보다 빠르게 개개인이 원하고 필요로 하는 상품과 혜택, 푸드 콘텐츠를 맞춤 제안합니다 </p>
+                </div>
+            </div>
+            <div class="slidenormal">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide slide01">
+                        <div class="slideInner">
+                            <div class="section_slideTop">
+                                <h5>라이프존</h5>
+                                <p>비건, 감탄, 베이비, 키즈, 캠핑 <br> 개개인의 라이프스타일과<br> 취향에 맞는 상품을 간편하게</p>
+                            </div>
+                            <div class="section_slideBottom">
+                                <img src="img/img_hellonature04_01.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide02">
+                        <div class="slideInner">
+                            <div class="section_slideTop">
+                                <h5>더신선</h5>
+                                <p>시간, 산지, 솜씨 좋은 사람<br> 세 가지 특별함이 완성하는<br> 신선 그 이상의 신선</p>
+                            </div>
+                            <div class="section_slideBottom">
+                                <img src="img/img_hellonature04_02.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide03">
+                        <div class="slideInner">
+                            <div class="section_slideTop">
+                                <h5>팝업스토어</h5>
+                                <p>전국은 물론 전세계의 핫한<br> 카페와 디저트숍, 맛집메뉴를<br> 오늘 주문하고 내일 바로 집에서</p>
+                            </div>
+                            <div class="section_slideBottom">
+                                <img src="img/img_hellonature04_03.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide04">
+                        <div class="slideInner">
+                            <div class="section_slideTop">
+                                <h5>라이프존</h5>
+                                <p>내게 필요한 상품과 혜택,<br> 푸드 콘텐츠까지<br> 꼭 맞는 정보를 알아서 제안</p>
+                            </div>
+                            <div class="section_slideBottom">
+                                <img src="img/img_hellonature04_04.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide05">
+                        <div class="slideInner">
+                            <div class="section_slideTop">
+                                <h5>더그린배송</h5>
+                                <p>처리 곤란한 포장재도<br> 환경에 대한 부담도 없이<br> 매일 받아도 가뿐한 새벽배송</p>
+                            </div>
+                            <div class="section_slideBottom">
+                                <img src="img/img_hellonature04_05.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide slide06">
+                        <div class="slideInner">
+                            <div class="section_slideTop">
+                                <h5>ICT<br> 물류시스템</h5>
+                                <p>업계 최초 AI피킹, 냉동 워크인,<br> 소터 컨베이어 시스템이<br> 빠르고 정확한 배송 실현</p>
+                            </div>
+                            <div class="section_slideBottom">
+                                <img src="img/img_hellonature04_06.jpg" alt="">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+        <div class="section_05">
+            <div class="responseInner">
+                <h2>오늘이 맛있는 탐험으로<br> 초대합니다</h2>
+                <div class="sectionInner">
+                    <div class="taC">
+                        <a href="https://apps.apple.com/kr/app/%ED%97%AC%EB%A1%9C%EB%84%A4%EC%9D%B4%EC%B2%98/id1098023186" target="_blank" title="새창으로 열기 ">App Store</a>
+                        <a href="https://play.google.com/store/apps/details?id=net.hellonature" target="_blank" title="새창으로 열기 ">Google Play</a>
+                    </div>
+                    <img src="img/img_hellonature05_03.png" alt="">
+                </div>
+            </div>
+        </div>
+        <div class="section_06">
+            <h2>궁금한 사항이 있으신가요?</h2>
+            <div class="dFlex taC">
+                <dl>
+                    <dd><img src="img/img_hellonature06_01.png" alt=""></dd>
+                    <dt>고객센터</dt>
+                    <dd>1644-4339</dd>
+                </dl>
+                <dl>
+                    <dd><img src="img/img_hellonature06_02.png" alt=""></dd>
+                    <dt>팩스</dt>
+                    <dd>02-3443-7701</dd>
+                </dl>
+                <dl>
+                    <dd><img src="img/img_hellonature06_03.png" alt=""></dd>
+                    <dt>제휴제안</dt>
+                    <dd><a class="borderOvalBox11" href="https://docs.google.com/forms/d/e/1FAIpQLScYsGUwWbgURbT-mbge7b89KjHdfaSm0HQAS5sHXtYGkApjfQ/viewform" target="_blank" title="새창으로 열기 - 제휴제안">제휴제안</a></dd>
+                </dl>
+                <dl>
+                    <dd><img src="img/img_hellonature06_04.png" alt=""></dd>
+                    <dt>입점문의</dt>
+                    <dd><a class="borderOvalBox11" href="https://docs.google.com/forms/d/e/1FAIpQLSfnM7yjOeuzde5ftt6rCbdilxUVUv0vvOGHjGbgoECLlqQvrw/viewform" target="_blank" title="새창으로 열기 - 입점문의">입점문의</a></dd>
+                </dl>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

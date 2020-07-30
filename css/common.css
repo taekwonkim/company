@@ -1,0 +1,458 @@
+html {font-family: 'NanumSquareRound', 'Nanum Gothic', sans-serif; font-weight: 400;}
+button {cursor: pointer; background:none; border: 0px none;}
+a {text-decoration: none; color: initial;}
+h1, h2, h3, dl, dt, dd, p, ul, figure, div, button {margin: 0; padding: 0;}
+div, section, article, figcaption, figure, header {box-sizing: border-box;}
+li {list-style: none;}
+.taC {text-align: center;}
+.ta_l {text-align: left;}
+.show {display: block !important;}
+.hide {display: none !important;}
+.dFlex {display: flex;}
+.poR {position: relative;}
+.webOnly {display: none;}
+.responseInner {max-width: 1000px; margin: 0 auto;}
+a.on, button.on {text-decoration: underline;}
+.f_dec {color: #999;}
+.borderOvalBox11 {border: 1px solid #00b081; border-radius: 11px; display: inline-block; padding: 0px 10px; color: #00b081; font-size: 15px; height: 22px; line-height: 23px;}
+a.borderOvalBox11::after {content: ""; background-image: url(../img/img_arrow_right.jpg); width: 8px; height: 13px; display: inline-block; background-size: cover; vertical-align: middle; margin: -3px 0 0 4px;}
+.contentsToggle {display: none;}
+.show {display: block !important;}
+.btnToggleNext {position: relative;}
+.btnToggleNext.open::after {transform: rotate(90deg);}
+.wrap_hellonature {width: 100%; overflow: hidden;}
+.wrap_hellonature img {width: 100%; vertical-align: middle;}
+.wrap_hellonature p {margin-bottom: 20px; font-size: 15px; line-height: 1.4; color: #000;}
+.wrap_hellonature .sectionInner {padding: 0 23px;}
+header {padding: 20px 25px; border-bottom: 1px solid #e2e2e2;}
+header .responseInner {display: flex; justify-content: space-between; align-items: center;}
+header nav {line-height: 14px;}
+header nav a {color: #00b081; font-size: 14px; margin-left: 12px;}
+header h1 a { background-image: url(../img/logo.jpg); background-repeat: no-repeat; background-size: contain; height: 14px; width: 90px; display: block;}
+h1 {font-size: 0; width: 90px; height: 14px;}
+h2 {font-size: 34px; line-height: 1.32; padding: 84px 0 25px 0; font-weight: 800;}
+.company .section_01 {position: relative;}
+.company .section_01 h2 {color: #00b081; text-align: center;}
+.company .section_01 #introImg {max-width: 375px; margin: 0 auto;}
+.company .section_01 .frame {position: absolute; bottom: 12%; left: 0%; width: 100%; overflow: hidden; z-index: 100;}
+.company .section_01 .frame svg {width: 100%; height: auto; stroke-linecap: round; stroke-width: 5; stroke: #FFEA81; fill: none; vertical-align: bottom;}
+.company .section_01 #trigger1 {position: absolute; top: 0;}
+.company .section_01 .frame svg path {width: 100%; -webkit-animation: dash 3s linear infinite; animation: dash 3s linear infinite; }
+.section_02 {background-color: #f2f2f2;}
+.section_02 .responseInner {max-width: 510px; padding-bottom: 96px; background-image: url(../img/img_hellonature02.png); background-repeat: no-repeat; background-size: 70px; background-position: 95% 95%;}
+.section_02 p {margin-bottom: 20px; font-size: 15px; line-height: 1.4; color: #000;}
+.company .section_03 {position: relative; width: 100%; height: 569px;}
+.company .section_03 h2 {color: #fff; padding: 0; position: absolute; top: 42%; left: 23px;}
+.company .section_03 .hellonatureShape-2 h2, .company .section_03 .hellonatureShape-2 p {left: 45px;}
+.company .section_03 .hellonatureShape-3 h2, .company .section_03 .hellonatureShape-3 p {left: 40px;}
+.company .section_03 .hellonatureShape-4 h2, .company .section_03 .hellonatureShape-4 p {left: 120px;}
+.company .section_03 .hellonatureShape-5 h2, .company .section_03 .hellonatureShape-5 p {left: 80px;}
+.company .section_03 .swipeArea {position: absolute; right: 0; top: 0; width: 100%; height: 100%; overflow: hidden;}
+.company .section_03 .swipeIn, svg {width: 100%; height: 100%;}
+.hellonatureShape-3, .hellonatureShape-4, .hellonatureShape-5, .hellonatureShape-6, .hellonatureShape-7 {background-color: #fff;}
+.company .section_03 h2 {z-index: 1;}
+.company .section_03 .hellonatureShape-2 h2, .company .section_03 .hellonatureShape-2 p, .company .section_03 .hellonatureShape-4 h2, .company .section_03 .hellonatureShape-4 p {color: #000;}
+.company .section_03 p {color: #fff; font-size: 20px; margin: 0; position: absolute; top: 52%; left: 23px;}
+.company .section_03 .swipeArea {max-width: 375px; margin: 0 auto; position: relative;}
+.company .section_03.prev {animation-name: section_03bgc02Pre; animation-duration: 1s; animation-delay: 1s; animation-direction: alternate; animation-fill-mode: forwards;}
+@keyframes section_03bgc02Pre {
+    0% {background-color: #fff;}
+    100% {background-color: #00b081;}
+}
+.company .section_03 .btn_next {display: none;}
+.company .section_03 .hellonatureShape-1 .btn_next {width: 13px; position: absolute; top:258px; right: 16px; display: block; animation-name: btn_nextFade; animation-duration: 1s; animation-delay: 1s; animation-direction: alternate; animation-fill-mode: forwards; opacity: 0;}
+@keyframes btn_nextFade {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+}
+.section_03 path {display: none;}
+.hellonatureShape-1.prev path.shape02_1 {animation-duration: 0.5s; animation-name: changeShape2_1Pre; animation-iteration-count: 1; animation-direction: alternate; animation-fill-mode: forwards; animation-delay: 1s; fill: #fff; transform: translate(-1600%, -800%) scale(17); opacity: 0;}
+@keyframes changeShape2_1Pre {
+    0% {
+        transform: translate(-1600%, -800%) scale(17);
+        fill: #fff;
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-100%, -52%) scale(2);
+        fill: #fff;
+        opacity: 1;
+    }
+}
+.hellonatureShape-1 path.shape01 {fill: #fff; animation-duration: 2s; animation-name: changesize; animation-iteration-count: infinite; animation-direction: alternate; display: block;}
+@keyframes changesize {
+    from {
+        transform: translate(-100%, -52%) scale(2);
+    }
+    to {
+        transform: translate(-120%, -62%) scale(2.2);
+    }
+}
+.hellonatureShape-1.prev path.shape01Pre {display: block;}
+.hellonatureShape-1.prev path.shape02_1 {display: block;}
+.hellonatureShape-2 path.shape01 {display: none;}
+.hellonatureShape-2.prev path.shape02Pre {display: block;}
+.hellonatureShape-2.active path.shape02 {display: block;}
+.hellonatureShape-2.active path.shape02_1 {display: block;}
+.hellonatureShape-3.prev path.shape03Pre {display: block;}
+.hellonatureShape-3.active path.shape03 {display: block;}
+.hellonatureShape-4.prev path.shape04Pre {display: block;}
+.hellonatureShape-4.active path.shape04 {display: block;}
+.hellonatureShape-5.prev path.shape05Pre {display: block;}
+.hellonatureShape-5.active path.shape05 {display: block;}
+.hellonatureShape-1.prev path.shape01 {display: none;}
+.hellonatureShape-1.prev path.shape01Pre {animation-duration: 0.5s; animation-name: changeShape1Pre; animation-iteration-count: 1; animation-direction: alternate; animation-fill-mode: forwards; }
+@keyframes changeShape1Pre {
+    0% {
+        fill: #FFEA81; 
+        transform: translate(-45%, -40%) scale(1.8);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(0%, 0%) scale(1);
+        fill: #FFEA81;
+        opacity: 0;
+    }
+    
+}
+.hellonatureShape-2.active {animation-name: hellonatureShapebgc02Act; animation-duration: 0.5s; animation-direction: alternate; animation-fill-mode: forwards;}
+@keyframes hellonatureShapebgc02Act {
+    0% {background-color: #00b081;}
+    100% {background-color: #fff;}
+}
+.hellonatureShape-2.prev path {animation-duration: 1.5s; animation-name: changeShape2Pre; animation-iteration-count: 1; animation-direction: alternate; animation-fill-mode: forwards; }
+@keyframes changeShape2Pre {
+    0% {
+        fill: #00b081; 
+        transform: translate(-65%, -30%) scale(1.6);
+        opacity: 1;
+    }
+    100% {
+        fill: #FFEA81; 
+        transform: translate(-45%, -40%) scale(1.8);
+        opacity: 1;
+    }
+}
+.hellonatureShape-2.active path.shape02 {animation-duration: 1.5s; animation-name: changeShape2Act; animation-iteration-count: 1; animation-direction: alternate; animation-fill-mode: forwards; animation-delay: 0.8s; opacity: 0;}
+@keyframes changeShape2Act {
+    0% {
+        transform: translate(0%, 0%) scale(1);
+        fill: #fff;
+        opacity: 0;
+    }
+    100% {
+        fill: #FFEA81; 
+        transform: translate(-45%, -40%) scale(1.8);
+        opacity: 1;
+    }
+}
+.hellonatureShape-2.active path.shape02_1 {animation-duration: 0.8s; animation-name: changeShape2_1Act; animation-iteration-count: 1; animation-direction: alternate; animation-fill-mode: forwards;}
+@keyframes changeShape2_1Act {
+    0% {
+        transform: translate(-100%, -52%) scale(2);
+        fill: #fff;
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-1600%, -800%) scale(17);
+        fill: #fff;
+        opacity: 0;
+    }
+}
+.hellonatureShape-3.prev path {animation-duration: 1.5s; animation-name: changeShape3Pre; animation-iteration-count: 1; animation-direction: alternate; animation-fill-mode: forwards; }
+@keyframes changeShape3Pre {
+    0% {
+        fill: #FFEA81; 
+        transform: translate(-0%, -30%) scale(1.6);
+        opacity: 1;
+    }
+    100% {
+        fill: #00B081; 
+        transform: translate(-65%, -30%) scale(1.6);
+        opacity: 1;
+    }
+}
+.hellonatureShape-3.active path {animation-duration: 1.5s; animation-name: changeShape3Act; animation-iteration-count: 1; animation-direction: alternate; animation-fill-mode: forwards;}
+@keyframes changeShape3Act {
+    0% {
+        transform: translate(-45%, -40%) scale(1.8);
+        fill: #FFEA81;
+        opacity: 1;
+    }
+    100% {
+        fill: #00B081; 
+        transform: translate(-65%, -30%) scale(1.6);
+        opacity: 1;
+    }
+}
+.hellonatureShape-4.prev path {animation-duration: 1.5s; animation-name: changeShape4Pre; animation-iteration-count: 1; animation-direction: alternate; animation-fill-mode: forwards; }
+@keyframes changeShape4Pre {
+    0% {
+        fill: #00B081; 
+        transition: all 0.35s ease; 
+        transform: translate(-30%, -30%) scale(1.6);
+        opacity: 1;
+    }
+    100% {
+        fill: #FFEA81; 
+        transform: translate(0%, -30%) scale(1.6);
+        opacity: 1;
+    }
+}
+.hellonatureShape-4.active path {animation-duration: 1.5s; animation-name: changeShape4Act; animation-iteration-count: 1; animation-direction: alternate; animation-fill-mode: forwards; }
+@keyframes changeShape4Act {
+    0% {
+        fill: #00B081; 
+        transform: translate(-65%, -30%) scale(1.6);
+        opacity: 1;
+    }
+    100% {
+        fill: #FFEA81; 
+        transform: translate(0%, -28%) scale(1.6);
+        opacity: 1;
+    }
+}
+.hellonatureShape-5.active path {animation-duration: 1.5s; animation-name: changeShape5Act; animation-iteration-count: 1; animation-direction: alternate; animation-fill-mode: forwards; }
+@keyframes changeShape5Act {
+    0% {
+        fill: #FFEA81; 
+        transform: translate(0%, -30%) scale(1.6);
+        opacity: 1;
+    }
+    100% {
+        fill: #00B081; 
+        transform: translate(-30%, -28%) scale(1.6);
+        opacity: 1;
+    }
+}
+.company .section_04 {padding-bottom: 80px;}
+.company .section_04 .slidenormal {padding: 0 40px 50px 40px; margin-top: 50px; position: relative;}
+.company .section_04 .sectionInner p {width: 240px; word-break: keep-all;}
+.company .section_04 .swiper-slide {max-width: 280px; box-sizing: border-box;}
+.company .section_04 .swiper-slide .slideInner {border-radius: 12px; box-shadow: 3px 5px 15px 0 rgba(0, 0, 0, 0.2); background-color: #00b081; color: #fff; overflow: hidden;}
+.company .section_04 .swiper-slide .section_slideTop {padding: 30px 30px 0 30px; height: 160px;}
+.company .section_04 .swiper-slide .section_slideTop h5 {font-size: 26px; margin: 0 0 10px 0;}
+.company .section_04 .swiper-slide .section_slideTop p {color: #fff;}
+.company .section_04 .swiper-slide::before {content: ""; width: 85px; height: 67px; background-repeat: no-repeat; position: absolute; top: -26px; right: 15px; background-size: contain;}
+.company .section_04 .swiper-slide.slide01::before, .section_04 .swiper-slide.slide02::before, .section_04 .swiper-slide.slide03::before {background-image: url(../img/img_hellonature04_product.png);}
+.company .section_04 .swiper-slide.slide04::before, .section_04 .swiper-slide.slide05::before, .section_04 .swiper-slide.slide06::before {background-image: url(../img/img_hellonature04_service.png);}
+.company .section_04 .swiper-pagination-bullet {width: 10px; height: 10px;}
+.company .section_04 .swiper-pagination-bullet-active {background-color: #00b081;}
+.company .section_05 {background-color: #f2f2f2;}
+.company .section_05 h2 {text-align: center;}
+.company .section_05 .taC {margin-bottom: 30px;}
+.company .section_05 .taC a {background-color: #000; width: 94px; height: 32px; display: inline-block; border-radius: 5px; background-size: 80px 20px; background-repeat: no-repeat; background-position: center; text-indent: -5000px;}
+.company .section_05 .taC a:nth-child(1) {background-image: url(../img/img_hellonature05_01.png);}
+.company .section_05 .taC a:nth-child(2) {background-image: url(../img/img_hellonature05_02.png);}
+.company .section_06 {padding-bottom: 90px;}
+.company .section_06 h2 {text-align: center; width: 230px; margin: 0 auto;}
+.company .section_06 .dFlex {width: 260px; justify-content: space-between; margin: 0 auto; flex-flow: wrap;}
+.company .section_06 dl {width: 112px; margin-bottom: 26px;}
+.company .section_06 dl img {width: 26px;}
+.company .section_06 dl dt {margin: 8px 0 5px 0; font-weight: 800;}
+.career .section_01 {padding: 0 0 60px 0;}
+.career .section_01 .responseInner {position: relative;}
+.career .section_01 h2 {color: #00b081; padding: 60px 0;}
+.career .section_01 .line01 {width: 112px; position: absolute; top: 120px; left: 190px;}
+.career .section_02 .sectionInner {position: relative;}
+.career .section_02 .line02 {width: 120px; position: absolute; top: -100px; left: 30px;}
+.career .section_02 .line03 {width: 22px; position: absolute; top: 14px; left: 20px;}
+.career .section_03 .slidenormal {padding: 0 40px 50px 40px; position: relative;}
+.career .section_03 .swiper-slide {width: 295px;}
+.career .section_03 .swiper-slide .slideInner {border-radius: 12px; box-shadow: 3px 5px 15px 0 rgba(0, 0, 0, 0.2); background-color: #00b081; color: #fff; overflow: hidden;}
+.career .section_03 .swiper-slide .section_slideTop {padding: 10px 0 0 10px; height: 338px;}
+.career .section_03 .swiper-slide .section_slideBottom {padding: 20px 20px 0 20px; height: 230px;}
+.career .section_03 .swiper-slide .section_slideBottom h5 {font-size: 18px; margin: 0 0 10px 0; line-height: 1.4;}
+.career .section_03 .swiper-slide .section_slideBottom p {color: #fff; font-size: 15px; line-height: 1.4;}
+.career .section_03 .swiper-pagination-bullet {width: 10px; height: 10px;}
+.career .section_03 .swiper-pagination-bullet-active {background-color: #00b081;}
+.career .section_04 .dFlex {flex-direction: column;}
+.career .section_04 dl {border-radius: 11px; border: solid 1px #c4c4c4; padding: 0 20px; margin-bottom: 10px; box-sizing: border-box;}
+.career .section_04 dt button {font-size: 17px; color: #00b081; font-weight: 800; text-align: left; width: 100%; outline: none; height: 60px;}
+.career .section_04 dt button::before {content: ""; width: 28px; height: 28px; display: inline-block; margin-right: 10px; background-size: contain; vertical-align: middle; background-repeat: no-repeat;}
+.career .section_04 dl.section_04_01 dt button::before {background-image: url(../img/icon_career04_01.jpg);}
+.career .section_04 dl.section_04_02 dt button::before {background-image: url(../img/icon_career04_02.jpg);}
+.career .section_04 dl.section_04_03 dt button::before {background-image: url(../img/icon_career04_03.jpg);}
+.career .section_04 dl.section_04_04 dt button::before {background-image: url(../img/icon_career04_04.jpg);}
+.career .section_04 dl.section_04_05 dt button::before {background-image: url(../img/icon_career04_05.jpg);}
+.career .section_04 dl.section_04_06 dt button::before {background-image: url(../img/icon_career04_06.jpg);}
+.career .section_04 dl.section_04_07 dt button::before {background-image: url(../img/icon_career04_07.jpg);}
+.career .section_04 dl.section_04_08 dt button::before {background-image: url(../img/icon_career04_08.jpg);}
+.career .section_04 dt button::after {content: ""; background-image: url(../img/img_arrow_right.jpg); width: 8px; height: 13px; display: inline-block; background-size: cover; vertical-align: middle; margin: 7px 0 0 0; float: right;}
+.career .section_04 dd {font-size: 15px; margin: 0 0 16px 38px;}
+.career .section_05 {padding-top: 80px;}
+.career .section_06 {padding-bottom: 100px;}
+.career .section_06 .dFlex {flex-direction: column;}
+.career .section_06 dl {margin-bottom: 30px;}
+.career .section_06 dt {font-weight: 800; margin-bottom: 5px;}
+.career .section_06 dl:last-child {color: #999; font-size: 12px;}
+.career .section_06 dl:last-child dt {display: none;}
+.career .section_06 dl:last-child dd {line-height: 1.5;}
+@media only screen and (min-width: 1080px) {
+.mobOnly {display: none;}
+.webOnly {display: block;}
+h1 {height: 19px; width: 120px;}
+header h1 a {height: 19px; width: 120px;}
+header nav {line-height: 18px;}
+header nav a {font-size: 18px; margin-left: 20px;}
+.wrap_hellonature .sectionInner {padding: 0 50px;}
+.company .section_01 h2 {font-size: 50px;}
+.company .section_01 #introImg {max-width: 980px;}
+.company .section_03 .swipeArea {max-width: 630px;}
+.company .section_03 .swipeIn {cursor: grab;}
+.company .section_03 .swipeIn:active {cursor: grabbing;}
+.company .section_03 .hellonatureShape-2 h2 {top: 38%;}
+.company .section_03 .hellonatureShape-3 h2 {top: 38%;}
+.company .section_03 .hellonatureShape-4 h2 {top: 38%;}
+.company .section_03 .hellonatureShape-5 h2 {top: 38%;}
+.company .section_03 .hellonatureShape-2 p {top: 47%;}
+.company .section_03 .hellonatureShape-3 p {top: 47%;}
+.company .section_03 .hellonatureShape-4 p {top: 47%;}
+.company .section_03 .hellonatureShape-5 p {top: 47%;}
+.company .section_03 .hellonatureShape-2 h2, .company .section_03 .hellonatureShape-2 p {left: 220px;}
+.company .section_03 .hellonatureShape-3 h2, .company .section_03 .hellonatureShape-3 p {left: 220px;}
+.company .section_03 .hellonatureShape-4 h2, .company .section_03 .hellonatureShape-4 p {left: 220px;}
+.company .section_03 .hellonatureShape-5 h2, .company .section_03 .hellonatureShape-5 p {left: 220px;}
+@keyframes changesize {
+    from {
+        transform: translate(-19%, -52%) scale(2);
+    }
+    to {
+        transform: translate(-31%, -62%) scale(2.2);
+    }
+}
+@keyframes changeShape1Pre {
+    0% {
+        fill: #FFEA81; 
+        transform: translate(-4%, -40%) scale(1.8);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(20%, 0%) scale(1);
+        fill: #FFEA81;
+        opacity: 0;
+    }
+    
+}
+@keyframes changeShape2_1Pre {
+    0% {
+        transform: translate(-1200%, -1050%) scale(22);
+        fill: #fff;
+        opacity: 0;
+    }
+    100% {
+        transform: translate(-19%, -52%) scale(2);
+        fill: #fff;
+        opacity: 1;
+    }
+}
+@keyframes changeShape2_1Act {
+    0% {
+        transform: translate(-19%, -52%) scale(2);
+        fill: #fff;
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-1200%, -1050%) scale(22);
+        fill: #fff;
+        opacity: 0;
+    }
+}
+
+@keyframes changeShape2Pre {
+    0% {
+        fill: #00B081;
+        transform: translate(2%, -30%) scale(1.6);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-4%, -40%) scale(1.8);
+        fill: #FFEA81;
+        opacity: 1;
+    }
+}
+@keyframes changeShape2Act {
+    0% {
+        transform: translate(20%, 0%) scale(1);
+        fill: #fff;
+        opacity: 0;
+    }
+    100% {
+        fill: #FFEA81;
+        transform: translate(-4%, -40%) scale(1.8);
+        opacity: 1;
+    }
+}
+@keyframes changeShape3Pre {
+    0% {
+        fill: #FFEA81;
+        transform: translate(3%, -30%) scale(1.6);
+        opacity: 1;
+    }
+    100% {
+        fill: #00B081; 
+        transform: translate(2%, -30%) scale(1.6);
+        opacity: 1;
+    }
+}
+@keyframes changeShape3Act {
+    0% {
+        transform: translate(-4%, -40%) scale(1.8);
+        fill: #FFEA81;
+        opacity: 1;
+    }
+    100% {
+        fill: #00B081;
+        transform: translate(2%, -30%) scale(1.6);
+        opacity: 1;
+    }
+}
+@keyframes changeShape4Pre {
+    0% {
+        fill: #00B081; 
+        transform: translate(4%, -30%) scale(1.6);
+        opacity: 1;
+    }
+    100% {
+        fill: #FFEA81; 
+        transform: translate(3%, -30%) scale(1.6);
+        opacity: 1;
+    }
+}
+@keyframes changeShape4Act {
+    0% {
+        fill: #00B081; 
+        transform: translate(2%, -30%) scale(1.6);
+        opacity: 1;
+    }
+    100% {
+        fill: #FFEA81;
+        transform: translate(3%, -30%) scale(1.6);
+        opacity: 1;
+    }
+}
+@keyframes changeShape5Act {
+    0% {
+        fill: #FFEA81; 
+        transform: translate(3%, -30%) scale(1.6);
+        opacity: 1;
+    }
+    100% {
+        fill: #00B081; 
+        transform: translate(4%, -30%) scale(1.6);
+        opacity: 1;
+    }
+}
+.company .section_04 .sectionInner p {width: 470px;}
+.company .section_04 .slidenormal {margin-top: 100px;}
+.company .section_05 .responseInner {max-width: 375px;}
+.company .section_06 .dFlex {flex-flow: nowrap; width: 540px;}
+.company .section_06 h2 {width: 100%; padding: 84px 0 55px 0;}
+.career .section_01 .line01 {width: 118px; position: absolute; top: 130px; left: 216px;}
+.career .section_02 .line02 {width: 162px; position: absolute; top: -120px; left: 54px;}
+.career .section_02 .line03 {width: 26px; position: absolute; top: 35px; left: 44px;}
+.career .section_04 .dFlex {flex-wrap: wrap; justify-content: space-between; flex-direction: row;}
+.career .section_04 dl {width: 440px;}
+.career .section_06 dl {width: 440px;}
+.career .section_06 .dFlex {flex-wrap: wrap; justify-content: space-between; flex-direction: row;}
+}
